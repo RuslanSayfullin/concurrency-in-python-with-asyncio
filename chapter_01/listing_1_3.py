@@ -1,4 +1,4 @@
-#Создание многопоточного Python-приложения
+# Создание многопоточного Python-приложения
 import threading
 
 def hello_from_thread():
