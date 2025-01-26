@@ -1,4 +1,4 @@
-#выполнение сопрограммы
+# Выполнение сопрограммы
 import asyncio
 
 async def coroutine_add_one(number: int) -> int:

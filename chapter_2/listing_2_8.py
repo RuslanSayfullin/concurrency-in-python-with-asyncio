@@ -1,4 +1,4 @@
-#создание задачи
+# Создание задачи
 import asyncio
 from delay_functions import delay
 

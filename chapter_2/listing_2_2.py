@@ -1,4 +1,4 @@
-#сравнение сопрограмм с обычными функциями
+# Cравнение сопрограмм с обычными функциями
 async def coroutine_add_one(number: int) -> int:
     return number + 1
 

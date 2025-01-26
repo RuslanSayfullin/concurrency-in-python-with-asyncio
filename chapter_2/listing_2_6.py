@@ -1,4 +1,4 @@
-#повторно используемая сопрограмма delay
+# Повторно используемая сопрограмма delay
 import asyncio
 
 async def delay(delay_seconds: int) -> int:

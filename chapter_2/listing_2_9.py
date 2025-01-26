@@ -1,4 +1,4 @@
-#конкурентное выполнение нескольких задач
+# Конкурентное выполнение нескольких задач
 import asyncio
 from delay_functions import delay
 
