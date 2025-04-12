@@ -2,7 +2,7 @@
 import asyncio
 
 async def hello_word_message() -> str:
-    await asyncio.sleep(10)   # Приостановить hello_world_message на 1 c.
+    await asyncio.sleep(5)   # Приостановить hello_world_message на 1 c.
     return 'Hello World!'
 
 async def main() -> None:

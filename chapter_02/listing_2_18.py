@@ -1,6 +1,6 @@
-#попытка конкурентного выполнения счетного кода
+# Попытка конкурентного выполнения счетного кода
 import asyncio
-from util import async_timed, delay
+from async_timed import async_timed
 
 @async_timed()
 async def cpu_bound_work() -> int:

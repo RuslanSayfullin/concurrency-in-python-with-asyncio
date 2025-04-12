@@ -1,4 +1,4 @@
-#декоратор для хронометража сопрограмм
+# декоратор для хронометража сопрограмм
 import functools
 import time
 from typing import Callable, Any

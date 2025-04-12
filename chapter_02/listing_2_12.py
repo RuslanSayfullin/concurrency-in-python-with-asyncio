@@ -5,7 +5,7 @@ from delay_functions import delay
 async def main():
     delay_task = asyncio.create_task(delay(2))
     try:
-        result = await asyncio.ait_for(delay_task, timeout=1)
+        result = await asyncio.wait_for(delay_task, timeout=1)
         print(result)
     except asyncio.exceptions.TimeoutError:
         print('Тайм-аут!')

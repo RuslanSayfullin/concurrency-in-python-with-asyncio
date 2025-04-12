@@ -1,7 +1,7 @@
-#неправильное использование блокируещего API как сопрограммы
+# Неправильное использование блокируещего API как сопрограммы
 import asyncio
 import requests
-from util import async_timed
+from async_timed import async_timed
 
 @async_timed()
 async def get_example_status() -> int:

@@ -1,6 +1,7 @@
-#счётный код и длительная задача
+# Счетный код и длительная задача
 import asyncio
-from util import async_timed, delay
+from delay_functions import delay
+from async_timed import async_timed
 
 @async_timed()
 async def cpu_bound_work() -> int:

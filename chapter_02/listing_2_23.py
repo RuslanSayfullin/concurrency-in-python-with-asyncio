@@ -1,6 +1,6 @@
-#выполнение счетного кода в отладочном режиме
+# Выполнение счетного кода в отладочном режиме
 import asyncio
-from util import async_timed
+from async_timed import async_timed
 
 @async_timed()
 async def cpu_bound_work() -> int:

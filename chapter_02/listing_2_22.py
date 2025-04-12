@@ -1,6 +1,6 @@
-#получение доступа к циклу событий
+# Получение доступа к циклу событий
 import asyncio
-from util import async_timed, delay
+from delay_functions import delay
 
 def call_later():
     print("Меня вызовут в ближайшем будущем!")

@@ -13,3 +13,5 @@ async def main():
     await hello_every_second()
     await first_delay
     await second_delay
+
+asyncio.run(main())
