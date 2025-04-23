@@ -1,4 +1,4 @@
-#использование селектора для построения неблокирующего сервера
+# Использование селектора для построения неблокирующего сервера
 import selectors
 import socket
 from selectors import SelectorKey

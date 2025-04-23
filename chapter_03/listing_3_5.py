@@ -1,4 +1,4 @@
-#первая попытка создать неблокирующий сокет
+# Первая попытка создать неблокирующий сервер
 import socket
 
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

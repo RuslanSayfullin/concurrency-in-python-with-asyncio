@@ -1,18 +1,19 @@
 # построение асинхронного эхо-сервера
 import asyncio
 import socket
-from asyncio import AbstractEventloop
 
-async def echo(connection: socket, loop: AbstactEventLoop) -> None:
+
+async def echo(connection: socket, loop: asyncio.AbstractEventLoop) -> None:
     while data := await loop.sock_recv(connection, 1024):
+        # В бесконечном цикле ожидаем данных от клиента
         await loop.sock_sendall(connection, data)   # получив данный, отправляем их обратно клиенту
 
-async def listen_for_connection(server_socket: socket, loop: AbstactEventLoop):
+async def listen_for_connection(server_socket: socket, loop: asyncio.AbstractEventLoop):
     while True:
-        connection, address = await loop.sock_accept(srver_socket)
+        connection, address = await loop.sock_accept(server_socket)
         connection.setblocking(False)
         print(f"Получен запрос на подключение от {address}")
-        asyncio.create_task(echo(connection, loop)  # после получения запроса
+        asyncio.create_task(echo(connection, loop))  # после получения запроса
 
 async def main():
     server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

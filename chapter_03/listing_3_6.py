@@ -1,4 +1,4 @@
-#перехват и игнорирование ошибок блокирующего ввода0вывода
+# Перехват и игнорирование ошибок блокирующего ввода-вывода
 import socket
 
 server_socket = socket.socket(socket.AF_INET, socket.SOCK_STREAM)

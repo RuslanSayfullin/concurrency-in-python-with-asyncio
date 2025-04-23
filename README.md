@@ -28,7 +28,7 @@ This code ran successfully with Python version 3.10.2. Using a different version
 Вы можете добавить путь к PYTHONPATH перед запуском сценария следующим образом:
 bash
 	$ export PYTHONPATH=/полный/путь/к/concurrency-in-python-with-asyncio:$PYTHONPATH
-	$python3 chapter_2/listing_2_18.py
+	$ python3 chapter_2/listing_2_18.py
 
 Замените /полный/путь/к/concurrency-in-python-with-asyncio на фактический полный путь к папке concurrency-in-python-with-asyncio, где находится папка util.
 После добавления пути к PYTHONPATH Python сможет корректно импортировать функцию async_timed из async_timer.py в вашем сценарии listing_2_18.py.

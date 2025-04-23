@@ -1,4 +1,4 @@
-# добавление обработчика сигнала, снимающего все задачи
+# Добавление обработчика сигнала, снимающего все задачи
 import asyncio, signal
 from asyncio import AbstractEventLoop
 from typing import Set
