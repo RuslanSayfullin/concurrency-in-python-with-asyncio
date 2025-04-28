@@ -1,7 +1,7 @@
 # Обработка всех результатов по мере поступления
 import aiohttp
 import asyncio
-from chapter_4 import fetch_status
+from chapter_04 import fetch_status
 from util import async_timed
 
 @async_timed()

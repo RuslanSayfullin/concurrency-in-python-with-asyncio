@@ -1,7 +1,7 @@
 # Отмена медленного запроса
 import asyncio
 import aiohttp
-from chapter_4 import fetch_status
+from chapter_04 import fetch_status
 
 async def main():
     async with aiohttp.ClientSession() as session:
