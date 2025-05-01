@@ -1,4 +1,4 @@
-# исполнители пула процессов
+# Исполнители пула процессов
 import time
 from concurrent.futures import ProcessPoolExecutor
 

@@ -32,7 +32,8 @@ async def query_products_concurrently(pool, queries):
 def run_in_new_loop(num_queries: int) -> List[Dict]:
     async def run_queries():
         async with asyncpg.create_pool(host='127.0.0.1', port=5432, user='postgres', password='password', database='products', min_size=6, max_size=6) as pool:
-        return await query_products_concurrently(pool, num_queries)
+            return await query_products_concurrently(pool, num_queries)
+    # Выполнять запросы в новом цикле событий и преобразовывать их в словари
     results = [dict(result) for result in asyncio.run(run_queries())]
     return results
 
@@ -40,7 +41,9 @@ def run_in_new_loop(num_queries: int) -> List[Dict]:
 async def main():
     loop = asyncio.get_running_loop()
     pool = ProcessPoolExecutor()
+    # Создать пять процессов, каждый со своим циклом событий, для выполнения запросов
     tasks = [loop.run_in_executor(pool, run_in_new_loop, 10000) for _ in range(5)]
+    # Ждать получения всех результатов
     all_results = await asyncio.gather(*tasks)
     total_queries = sum([len(result) for result in all_results])
     print(f'Извлечено товаров из базы данных: {total_queries}.')

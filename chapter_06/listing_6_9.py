@@ -1,4 +1,4 @@
-# распараллеливание операции reduce
+# Распараллеливание операции reduce
 import asyncio
 import concurrent.futures
 import functools
@@ -8,16 +8,20 @@ from chapter_06.listing_6_8 import partition, merge_dictionaries, map_frequencie
 
 
 async def reduce(loop, pool, counters, chunk_size) -> Dict[str, int]:
+    # Разбить словари на допускающие распараллеливание порции
     chunks: List[List[Dict]] = list(partition(counters, chunk_size))
     reducers = []
     while len(chunks[0]) > 1:
         for chunk in chunks:
             reducer = functools.partial(functools.reduce, merge_dictionaries, chunk)
             reducers.append(loop.run_in_executor(pool, reducer))
+        # Ждать завершения всех операций редукции
         reducer_chunks = await asyncio.gather(*reducers)
+        # Снова разбить результаты и выполнить еще одну итерацию цикла
         chunks = list(partition(reducer_chunks, chunk_size))
         reducers.clear()
     return chunks[0][0]
+
 
 async def main(partition_size: int):
     with open('googlebooks-eng-all-1gram-20120701-a', encoding='utf-8') as f:

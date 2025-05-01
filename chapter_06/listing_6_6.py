@@ -1,4 +1,4 @@
-# однопоточная модель MapReduce
+# Однопоточная модель MapReduce
 import functools
 from typing import Dict
 
@@ -27,9 +27,10 @@ lines = ["I know what I know",
         "I don't know much",
         "They don't know much"]
 
+# Для каждой строки текста выполнить операцию map
 mapped_results = [map_frequence(line) for line in lines]
 for result in mapped_results:
     print(result)
-
+# Редуцировать все промежуточные счетчики в окончательный результат
 print(functools.reduce(merge_dictionaries, mapped_results))
 
