@@ -13,6 +13,9 @@ with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
     server.bind(('127.0.0.1', 8000))
     server.listen()
     while True:
+        # Блокируется в ожидании подключения клиентов
         connection, _ = server.accept()
+        # Как только клиент подключился, создать поток для выполнения функции echo
         thread = Thread(target=echo, args=(connection,))
+        # Начать выполнение потока
         thread.start()

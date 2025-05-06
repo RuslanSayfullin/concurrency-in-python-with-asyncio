@@ -15,4 +15,5 @@ async def main():
     tasks = [loop.run_in_executor(None, functools.partial(get_status_code, url)) for url in urls]
     results = await asyncio.gather(*tasks)
     print(results)
+    
 asyncio.run(main())

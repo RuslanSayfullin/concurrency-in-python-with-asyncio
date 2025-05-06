@@ -21,6 +21,7 @@ class ClientEchoThread(Thread):
     def close(self):
         if self.is_alive():
             self.client.sendall(bytes('Останавливаюсь!', encoding='utf-8'))
+            # Разомкнуть подключение клиента, остановив чтение и запись
             self.client.shutdown(socket.SHUT_RDWR)
 
 with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as server:
