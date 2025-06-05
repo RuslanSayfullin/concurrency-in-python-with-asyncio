@@ -1,4 +1,4 @@
-#защита задачи от снятия 
+# Защита задачи от снятия 
 import asyncio
 from delay_functions import delay
 

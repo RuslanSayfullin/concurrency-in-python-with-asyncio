@@ -1,4 +1,4 @@
-#ожидание будущего обьекта
+# Ожидание будущего обьекта
 from asyncio import Future
 import asyncio
 
@@ -8,13 +8,13 @@ def make_request() -> Future:
     return future
 
 async def set_future_value(future) -> None:
-    await asyncio.sleep(1)  # Ждать 1с, прежде чес установить значение
+    await asyncio.sleep(1)  # Ждать 1с, прежде чем установить значение
     future.set_result(42)
 
 async def main():
     future = make_request()
     print(f'Будущий обьект готов? {future.done()}')
-    value = await future    # Приостоновить main, пока значение future не установлено
+    value = await future    # Приостановить main, пока значение future не установлено
     print(f'Будущий обьект готов? {future.done()}')
     print(value)
 

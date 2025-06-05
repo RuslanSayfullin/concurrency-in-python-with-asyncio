@@ -1,4 +1,4 @@
-#задание тайм-аута для задачи с помощью wait_for
+# задание тайм-аута для задачи с помощью wait_for
 import asyncio
 from delay_functions import delay
 

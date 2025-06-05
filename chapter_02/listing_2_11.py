@@ -10,7 +10,7 @@ async def main():
     while not long_task.done():
         print('Задача не закончилась, следующая проверка через секундую')
         await asyncio.sleep(1)
-        seconds_elapsed == seconds_elapsed + 1
+        seconds_elapsed = seconds_elapsed + 1
         if seconds_elapsed == 5:
             long_task.cancel()
 

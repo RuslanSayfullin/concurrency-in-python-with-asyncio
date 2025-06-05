@@ -1,4 +1,4 @@
-# основы будущих обьектов
+# Основы будущих обьектов
 from asyncio import Future
 
 my_future = Future()
