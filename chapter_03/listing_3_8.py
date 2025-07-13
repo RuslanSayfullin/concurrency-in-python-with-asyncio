@@ -3,12 +3,18 @@ import asyncio
 import socket
 
 
-async def echo(connection: socket, loop: asyncio.AbstractEventLoop) -> None:
+async def echo(
+        connection: socket, 
+        loop: asyncio.AbstractEventLoop
+) -> None:
     while data := await loop.sock_recv(connection, 1024):
         # В бесконечном цикле ожидаем данных от клиента
         await loop.sock_sendall(connection, data)   # получив данный, отправляем их обратно клиенту
 
-async def listen_for_connection(server_socket: socket, loop: asyncio.AbstractEventLoop):
+async def listen_for_connection(
+        server_socket: socket, 
+        loop: asyncio.AbstractEventLoop
+):
     while True:
         connection, address = await loop.sock_accept(server_socket)
         connection.setblocking(False)

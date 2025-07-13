@@ -6,7 +6,10 @@ import logging
 import signal
 from typing import List
 
-async def echo(connection: socket, loop: AbstractEventLoop) -> None:
+async def echo(
+        connection: socket,
+        loop: AbstractEventLoop
+) -> None:
     try:
         while data := await loop.sock_recv(connection, 1024):
             print('got data!')

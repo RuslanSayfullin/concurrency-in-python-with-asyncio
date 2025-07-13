@@ -14,7 +14,7 @@ async def main():
     task_one = asyncio.create_task(cpu_bound_work())
     task_two = asyncio.create_task(cpu_bound_work())
     await task_one
-    await task_one
+    await task_two
 
 asyncio.run(main())
 

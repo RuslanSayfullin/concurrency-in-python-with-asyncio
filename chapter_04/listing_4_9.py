@@ -9,7 +9,8 @@ from chapter_04 import fetch_status
 @async_timed()
 async def main():
     async with aiohttp.ClientSession() as session:
-        fetchers = [fetch_status(session, 'https://www.google.com', 1),
+        fetchers = [
+            fetch_status(session, 'https://www.google.com', 1),
             fetch_status(session, 'https://www.google.com', 10),
             fetch_status(session, 'https://www.google.com', 10)]
         
@@ -19,6 +20,7 @@ async def main():
                 print(result)
             except asyncio.TimeoutError:
                 print('Произошел тайм-аут!')
+        
         for task in asyncio.tasks.all_tasks():
             print(task)
 
