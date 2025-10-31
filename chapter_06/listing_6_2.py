@@ -7,6 +7,7 @@ def say_hello(name: str) -> str:
 if __name__ == "__main__":
     # Создать пул процессов
     with Pool() as process_pool:
+        # Выполнить say_hello с аргументом в отдельном процессе и получить результат
         hi_jeff = process_pool.apply(say_hello, args=('Jeff',))
         hi_john = process_pool.apply(say_hello, args=('John',))
         print(hi_jeff)

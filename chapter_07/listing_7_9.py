@@ -1,8 +1,9 @@
 # Блокировки и рекурсия
-from threading import Lock, Thread
+from threading import Lock, Thread, RLock
 from typing import List
 
-list_lock = Lock()
+#list_lock = Lock()
+list_lock = RLock()
 
 def sum_list(int_list: List[int]) -> int:
     print('Ожидание блокировки...')

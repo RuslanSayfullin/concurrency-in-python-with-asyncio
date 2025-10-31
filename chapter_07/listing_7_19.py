@@ -8,7 +8,7 @@ from util import async_timed
 def mean_for_row(arr, row):
     return np.mean(arr[row])
 
-data_points = 4000000000
+data_points = 1_000_000_000
 rows = 50
 columns = int(data_points / rows)
 

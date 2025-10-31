@@ -27,7 +27,7 @@ This code ran successfully with Python version 3.10.2. Using a different version
 Для импорта функции async_timed из файла async_timer.py, расположенного в папке concurrency-in-python-with-asyncio/util, вам нужно добавить путь к папке concurrency-in-python-with-asyncio в переменную окружения PYTHONPATH в Linux. Это позволит Python найти модуль util.async_timer при выполнении сценария listing_2_18.py.
 Вы можете добавить путь к PYTHONPATH перед запуском сценария следующим образом:
 bash
-	$ export PYTHONPATH=$PYTHONPATH:~/Documents/concurrency-in-python-with-asyncio
+	$ export PYTHONPATH=$PYTHONPATH:~/Документы/concurrency-in-python-with-asyncio
 	$ python3 chapter_2/listing_2_18.py
 
 Замените /полный/путь/к/concurrency-in-python-with-asyncio на фактический полный путь к папке concurrency-in-python-with-asyncio, где находится папка util.

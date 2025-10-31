@@ -3,6 +3,7 @@ from concurrent.futures import ProcessPoolExecutor
 import asyncio
 from multiprocessing import Value
 
+
 shared_counter: Value
 
 def init(counter: Value):

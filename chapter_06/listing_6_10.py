@@ -1,12 +1,14 @@
 # разделяемые значения и массив
 from multiprocessing import Process, Value, Array
 
+
 def increment_value(shared_int: Value):
     shared_int.value = shared_int.value + 1
 
 def increment_array(shared_array: Array):
     for index, integer in enumerate(shared_array):
         shared_array[index] = index +1
+
 
 if __name__ == '__main__':
     integer = Value('i', 0)
